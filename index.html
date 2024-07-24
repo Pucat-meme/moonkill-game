@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonkill - The Cosmic Memecoin Adventure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00ffff;
+            --secondary-color: #ff00ff;
+            --background-color: #0a0a2a;
+            --text-color: #ffffff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            background-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 0;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            font-size: 1.2rem;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        main {
+            padding: 2rem 0;
+        }
+
+        section {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            transition: transform 0.3s;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            box-shadow: 0 0 15px var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: var(--text-color);
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .tokenomics {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .tokenomics-item {
+            text-align: center;
+            margin: 1rem;
+        }
+
+        .tokenomics-item h3 {
+            color: var(--secondary-color);
+        }
+
+        #gameSection {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-color);
+            z-index: 2000;
+        }
+
+        #gameCanvas {
+            display: block;
+            margin: 20px auto;
+            background-color: #000;
+            border: 2px solid var(--primary-color);
+        }
+
+        #exitGame {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="mainContent">
+        <header>
+            <h1>Moonkill</h1>
+            <p>The Cosmic Memecoin Adventure</p>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#game">Game</a></li>
+                <li><a href="#token">Token</a></li>
+                <li><a href="#community">Community</a></li>
+            </ul>
+        </nav>
+        <main class="container">
+            <section id="about">
+                <h2>About Moonkill</h2>
+                <p>Embark on an interstellar journey with Moonkill - the memecoin that's out of this world! Blending the excitement of cryptocurrency with an addictive arcade-style game, Moonkill is your ticket to cosmic fun and potential lunar gains!</p>
+            </section>
+            <section id="game">
+                <h2>Moonkill Mayhem Game</h2>
+                <p>Blast off into Moonkill Mayhem, our adrenaline-pumping arcade game! Control Lunar, your fearless astronaut, as you collect Moonkill coins and dodge space debris. It's a cosmic dance of reflexes and strategy!</p>
+                <h3>Game Features:</h3>
+                <ul>
+                    <li>Intuitive controls for Earth-bound humans</li>
+                    <li>Multiple levels across different planets</li>
+                    <li>Power-ups that defy the laws of physics</li>
+                    <li>Global leaderboard to prove your galactic worth</li>
+                    <li>Earn real Moonkill tokens by playing</li>
+                </ul>
+                <a href="#" class="btn" id="playButton">Play Now</a>
+            </section>
+            <section id="token">
+                <h2>Moonkill Token</h2>
+                <p>Moonkill isn't just another memecoin - it's a cosmic revolution! Fully integrated into our game ecosystem, allowing you to earn and spend tokens for in-game purchases, upgrades, and more!</p>
+                <div class="tokenomics">
+                    <div class="tokenomics-item">
+                        <h3>Total Supply</h3>
+                        <p>1,000,000,000 MOONKILL</p>
+                    </div>
+                    <div class="tokenomics-item">
+                        <h3>Mint Authority</h3>
+                        <p>Revoked</p>
+                    </div>
+                    <div class="tokenomics-item">
+                        <h3>Freeze Authority</h3>
+                        <p>Revoked</p>
+                    </div>
+                    <div class="tokenomics-item">
+                        <h3>Liquidity Pool</h3>
+                        <p>100% Burnt</p>
+                    </div>
+                </div>
+                <a href="#" class="btn">Buy Moonkill Tokens</a>
+            </section>
+            <section id="community">
+                <h2>Join Our Cosmic Community</h2>
+                <p>Become part of the Moonkill constellation! Join our community to stay updated on the latest news, participate in intergalactic events, and connect with fellow space explorers!</p>
+                <a href="#" class="btn">Join Discord</a>
+                <a href="#" class="btn">Follow on Twitter</a>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Moonkill. All rights reserved. To the moon and beyond!</p>
+        </footer>
+    </div>
+
+    <div id="gameSection">
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        <a href="#" class="btn" id="exitGame">Exit Game</a>
+    </div>
+
+    <script>
+        // Game variables
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        let gameLoop;
+        let player;
+        let coins = [];
+        let obstacles = [];
+        let score = 0;
+        let gameRunning = false;
+
+        // Player object
+        class Player {
+            constructor() {
+                this.x = 50;
+                this.y = canvas.height - 50;
+                this.width = 30;
+                this.height = 30;
+                this.speed = 5;
+                this.jumping = false;
+                this.jumpStrength = 15;
+                this.gravity = 0.8;
+                this.velocity = 0;
+            }
+
+            draw() {
+                ctx.fillStyle = '#00ffff';
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+            }
+
+            move(direction) {
+                if (direction === 'left' && this.x > 0) {
+                    this.x -= this.speed;
+                }
+                if (direction === 'right' && this.x < canvas.width - this.width) {
+                    this.x += this.speed;
+                }
+            }
+
+            jump() {
+                if (!this.jumping) {
+                    this.jumping = true;
+                    this.velocity = -this.jumpStrength;
+                }
+            }
+
+            update() {
+                if (this.jumping) {
+                    this.y += this.velocity;
+                    this.velocity += this.gravity;
+
+                    if (this.y > canvas.height - this.height) {
+                        this.y = canvas.height - this.height;
+                        this.jumping = false;
+                    }
+                }
+            }
+        }
+
+        // Coin object
+        class Coin {
+            constructor() {
+                this.x = Math.random() * (canvas.width - 20);
+                this.y = Math.random() * (canvas.height - 20);
+                this.width = 20;
+                this.height = 20;
+            }
+
+            draw() {
+                ctx.fillStyle = 'gold';
+                ctx.beginPath();
+                ctx.arc(this.x + this.width / 2, this.y + this.height / 2, this.width / 2, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Obstacle object
+        class Obstacle {
+            constructor() {
+                this.x = canvas.width;
+                this.y = Math.random() * (canvas.height - 50);
+                this.width = 30;
+                this.height = 30;
+                this.speed = 3;
+            }
+
+            draw() {
+                ctx.fillStyle = '#ff00ff';
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+            }
+
+            update() {
+                this.x -= this.speed;
+            }
+        }
+
+        // Game functions
+        function startGame() {
+            if (!gameRunning) {
+                player = new Player();
+                coins = [];
+                obstacles = [];
+                score = 0;
+                gameLoop = setInterval(update, 1000 / 60); // 60 FPS
+                spawnCoin();
+                spawnObstacle();
+                gameRunning = true;
+            }
+        }
+
+        function stopGame() {
+            if (gameRunning) {
+                clearInterval(gameLoop);
+                gameRunning = false;
+            }
+        }
+
+        function update() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            player.update();
+            player.draw();
+
+            updateCoins();
+            updateObstacles();
+
+            drawScore();
+        }
+
+        function spawnCoin() {
+            if (coins.length < 5) {
+                coins.push(new Coin());
+            }
+            setTimeout(spawnCoin, 2000);
+        }
+
+        function spawnObstacle() {
+            obstacles.push(new Obstacle());
+            setTimeout(spawnObstacle, 3000);
+        }
+
+        function updateCoins() {
+            coins.forEach((coin, index) => {
+                coin.draw();
+                if (checkCollision(player, coin)) {
+                    coins.splice(index, 1);
+                    score++;
+                }
+            });
+        }
+
+        function updateObstacles() {
+            obstacles.forEach((obstacle, index) => {
+                obstacle.update();
+                obstacle.draw();
+                if (obstacle.x + obstacle.width < 0) {
+                    obstacles.splice(index, 1);
+                }
+                if (checkCollision(player, obstacle)) {
+                    gameOver();
+                }
+            });
+        }
+
+        function checkCollision(obj1, obj2) {
+            return obj1.x < obj2.x + obj2.width &&
+                   obj1.x + obj1.width > obj2.x &&
+                   obj1.y < obj2.y + obj2.height &&
+                   obj1.y + obj1.height > obj2.y;
+        }
+
+        function drawScore() {
+            ctx.fillStyle = '#ffffff';
+            ctx.font = '20px Orbitron';
+            ctx.fillText(`Score: ${score}`, 10, 30);
+        }
+
+        function gameOver() {
+            stopGame();
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00ffff';
+            ctx.font = '40px Orbitron';
+            ctx.textAlign = 'center';
+            ctx.fillText('Game Over!', canvas.width / 2, canvas.height / 2);
+            ctx.font = '20px Orbitron';
+            ctx.fillText(`Final Score: ${score}`, canvas.width / 2, canvas.height / 2 + 40);
+            ctx.fillText('Click "Exit Game" to return', canvas.width / 2, canvas.height / 2 + 80);
+        }
+
+        // Event listeners
+        document.addEventListener('keydown', (e) => {
+            if (gameRunning) {
+                switch(e.key) {
+                    case 'ArrowLeft':
+                        player.move('left');
+                        break;
+                    case 'ArrowRight':
+                        player.move('right');
+                        break;
+                    case 'ArrowUp':
+                    case ' ':
+                        player.jump();
+                        break;
+                }
+            }
+        });
+
+        // Play button functionality
